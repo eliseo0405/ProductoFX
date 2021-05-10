@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="ni.edu.ni.fcys.programacion2.tableviewfx.controllers.ProductoFXMLController">
+   <children>
+      <BorderPane layoutX="200.0" layoutY="100.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <FlowPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <GridPane prefHeight="203.0" prefWidth="600.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="163.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.0" minWidth="10.0" prefWidth="237.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="65.0" text="Nombre" GridPane.halignment="CENTER" />
+                              <Label alignment="TOP_CENTER" contentDisplay="CENTER" text="Descripción" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                              <Label alignment="TOP_CENTER" contentDisplay="CENTER" text="Cantidad" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                              <Label alignment="TOP_CENTER" contentDisplay="CENTER" text="Precio" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                              <Label alignment="TOP_CENTER" contentDisplay="CENTER" text="Imagen" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                              <Spinner fx:id="spCantidad" prefHeight="25.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="txtNombre" GridPane.columnIndex="1" />
+                              <TextField fx:id="txtDescripcion" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="txtPrecio" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="txtImagen" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Button fx:id="btnBuscar" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#btnBuscarAction" prefHeight="25.0" prefWidth="171.0" text="Buscar" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <GridPane.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </GridPane.margin>
+                              </Button>
+                           </children>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </GridPane>
+                     </children>
+                  </FlowPane>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <VBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <FlowPane alignment="TOP_CENTER" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnAgregar" mnemonicParsing="false" onAction="#btnAgregarAction" text="Agregar">
+                           <FlowPane.margin>
+                              <Insets bottom="5.0" right="10.0" />
+                           </FlowPane.margin>
+                        </Button>
+                        <Button fx:id="btnEliminar" alignment="CENTER" mnemonicParsing="false" onAction="#btnEliminarAction" text="Eliminar">
+                           <FlowPane.margin>
+                              <Insets bottom="5.0" />
+                           </FlowPane.margin>
+                        </Button>
+                     </children>
+                  </FlowPane>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="tblVProducto" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="tblCID" editable="false" prefWidth="75.0" text="ID" />
+                      <TableColumn fx:id="tblCNombre" editable="false" prefWidth="75.0" text="Nombre" />
+                        <TableColumn fx:id="tblCDescripcion" editable="false" prefWidth="75.0" text="Descripción" />
+                        <TableColumn fx:id="tblCCantidad" editable="false" prefWidth="75.0" text="Cantidad" />
+                        <TableColumn fx:id="tblCPrecio" editable="false" prefWidth="75.0" text="Precio" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </VBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
